@@ -1,0 +1,3 @@
+User-agent:*
+Disallow:
+Sitemap: http://libramebel.od.ua/sitemap.xml
