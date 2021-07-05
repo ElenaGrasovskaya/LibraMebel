@@ -1,0 +1,5 @@
+gallery\
+img\
+thumbnails\
+thumbnails_old\
+video\
