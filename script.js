@@ -134,10 +134,10 @@ let tabs = ["kitchen","wardrobe","bathroom","other"];
 let currentTab = 0;
 let pageNum=1;
 
-const pageMax=[5,1,1,2];
+const pageMax=[6,1,1,2];
 const noThumbPage= 
 [
-[0,0,0,0,1],
+[0,0,0,0,0,1],
 [1],
 [1],
 [1,1]
@@ -159,7 +159,9 @@ function openModal() {
 // Close the Modal
 function closeModal() {
   document.getElementById("myModal").style.display = "none";
-}
+  turnTabs(0);
+  turnpage(100);
+  }
 
 
 showSlides(slideIndex);
@@ -301,37 +303,29 @@ function showSubSlides(k)
 
 function animatePageOff()
 {
+  void page.offsetWidth;
   page.style.animationName = "newPageOff";
-  console.log("animatePageOff");
-
- /* setTimeout(clearAnimation, 500);
-  function clearAnimation()
-  {
-  page.style.animationName = "none";
-  }*/
+  console.log(page.style.animationName);
+  
 }
 function animatePageOn()
 {
+  void page.offsetWidth;
   page.style.animationName = "newPageOn";
-  console.log("animatePageOn");
- /* setTimeout(clearAnimation, 500);
-  function clearAnimation()
-  {
-  page.style.animationName = "none";
-  }*/
+  console.log(page.style.animationName);
 
 }
 
 
 function turnpage(k)
 {
- 
   
   
   let thumbnails = document.getElementsByClassName("hover-shadow");
   let slides = document.getElementsByClassName("mySlides");
   
   animatePageOff(); 
+  page.style.opacity = 0;
     
   let newPageNum=0;
   if(k===100)
@@ -385,11 +379,10 @@ function turnpage(k)
     }
     pageText.innerHTML = newPageNum+"/"+pageMax[currentTab]; 
     
-    if(pageLoad)
-    {
-      animatePageOn();
-      pageLoad=false;
-    }  
+
+     animatePageOn();
+     page.style.opacity = 1;
+     
     pageNum=newPageNum;
   
   }
@@ -403,7 +396,12 @@ function turnTabs(tab)
  let lightbox = document.getElementsByClassName("viewport");
  let subimage = document.getElementsByClassName("demo");
  let pageText = document.getElementById("pageText");
+
  animatePageOff();
+
+ page.style.opacity = 0;
+
+
  
   
  for(let i=0; i<tabs.length; i++)
@@ -414,56 +412,127 @@ function turnTabs(tab)
    document.getElementById(tabs[i]).className = "tabs";
 
  }
- setTimeout(replace,500)
- function replace() 
-  {
-      
-    
-    for (let i=0; i<gallery.length; i++)
-    {
-      gallery[i].style.visibility = "hidden";
-      gallery[i].src = gallery[i].src.replace("page"+pageNum,"page1");  //Reverting to the first page
-      gallery[i].src = gallery[i].src.replace(tabs[currentTab],tabs[tab]);
-      gallery[i].style.visibility = "visible";
-       
-       
-    }
-    
-  
 
+   setTimeout(replaceTab(),500);
+      function replaceTab()  
+      {
+        animatePageOn();
+       
+          for (let i=0; i<gallery.length; i++)
+        {
+         gallery[i].src = gallery[i].src.replace("page"+pageNum,"page1");  //Reverting to the first page
+         gallery[i].src = gallery[i].src.replace(tabs[currentTab],tabs[tab]);
+         
+
+        }
+        page.style.opacity = 1;
+      }
+    
     for (let i=0; i<lightbox.length; i++)
     {
-        lightbox[i].style.visibility = "hidden";
-        lightbox[i].src = lightbox[i].src.replace("page"+pageNum,"page1"); //Reverting to the first page
-        lightbox[i].src = lightbox[i].src.replace(tabs[currentTab],tabs[tab]);
-        lightbox[i].style.visibility = "visible";
+       lightbox[i].src = lightbox[i].src.replace("page"+pageNum,"page1"); //Reverting to the first page
+       lightbox[i].src = lightbox[i].src.replace(tabs[currentTab],tabs[tab]);
+       
         
     }
 
     for (let i=0; i<subimage.length; i++)
     {
-        subimage[i].style.visibility = "hidden";
+      
         subimage[i].src = subimage[i].src.replace("page"+pageNum,"page1"); //Reverting to the first page
         subimage[i].src = subimage[i].src.replace(tabs[currentTab],tabs[tab]);
-        subimage[i].style.visibility = "visible";
+       
     }
-    if(pageLoad)
-    {
-      animatePageOn();
-      pageLoad=false;
-    }  
-  
+    
     pageText.innerHTML = "1"+"/"+pageMax[tab];
 
     currentTab=tab;
     pageNum=1;
-  }
+   
+  
+    
+  
+  
  
 }
 
-function loadImage() {
-  pageLoad=true;
+
+
+
+
+function hideText()
+{
+  let downArrow = document.getElementById("arrow_down");
+  let upArrow = document.getElementById("arrow_up");
+  let text = document.getElementById("hide_text");
+  
+  downArrow.style.display= "block";
+  upArrow.style.display= "none";
+  
+  text.style.opacity = "0%";
+  setTimeout(() => { text.style.display = "none"; }, 500);
+  
 }
 
-$(".questions-grid").hide(slow);
+function showText()
+{
+  let downArrow = document.getElementById("arrow_down");
+  let upArrow = document.getElementById("arrow_up");
+  let text = document.getElementById("hide_text");
+  text.style.display = "block";
+   
+  downArrow.style.display= "none";
+  upArrow.style.display= "block";
+  setTimeout(() => { text.style.opacity = "100%"; }, 1);
+  
+ 
+}
+
+function hideText2()
+{
+  let downArrow = document.getElementById("more");
+  let upArrow = document.getElementById("no_more");
+  let text = document.getElementsByClassName("hide");
+  
+  downArrow.style.display= "block";
+  upArrow.style.display= "none";
+
+  
+  
+  setTimeout(() => { 
+    for(let i=0; i<text.length; i++)
+    {
+      text[i].style.display="none";
+      text[i].style.opacity = "0%"; 
+    }
+  }, 300);
+  
+}
+
+function showText2()
+{
+  let downArrow = document.getElementById("more");
+  let upArrow = document.getElementById("no_more");
+  let text = document.getElementsByClassName("hide");
+  for(let i=0; i<text.length; i++)
+  {
+    text[i].style.display="block";
+  }
+   
+  downArrow.style.display= "none";
+  upArrow.style.display= "block";
+  setTimeout(() => { 
+    for(let i=0; i<text.length; i++)
+    {
+      text[i].style.display="block";
+      text[i].style.opacity = "100%"; 
+    }
+    
+  }, 300);
+  
+ 
+
+
+
+}
 
