@@ -3,17 +3,15 @@ module.exports = class {
         // eslint-disable-next-line class-methods-use-this
         data() {
           return {
-            lang: 'en',
-            title: 'Home Page - Halo Lab',
+            lang: 'ru',
+            title: 'LibraМебель - проектируем комфорт для вашей кухни спальни ванной гостинной прихожей или детской на заказ в Одессе',
             layout: 'base',
             styles: 'index.scss',
             scripts: 'index.js',
-            keywords: 'Halo Lab',
+            keywords: 'кухни на заказ в Одессе, дизайн кухни одесса, заказать кухню в одессе, интерьер кухни фото, кухня стили интерьера, кухни на заказ одесса малиновский рынок, шкафы купе в прихожую встраиваемые, шкаф купе в наполнение, кухня рисунок, кухни с фотопечатью, кухня массив, шкафы наполнение, цены на кухни на заказ в Одессе, кухни на заказ одесса малиновский, кухня пластик, производство мебели в Одессе, установка мебели в Одессе, libra, либра Одесса, либрамебель, кухни в Одессе',
             permalink: 'index.html',
             description:
-              'Halo Lab Team brings the design-driven development of your digital ' +
-              'product to reality. We are working with a variety of projects, from ' +
-              'the strict insurance website to a dynamic music application.',
+              'LibraМебель - кухни на заказ в Одессе: дизайн, производство и установка кухонь и корпусной мебели на заказ в Одессе и Одесской области',
           };
         }
       
@@ -25,6 +23,7 @@ module.exports = class {
 <head>
         
         <link href="styles/index.css" media="screen" rel="stylesheet" type="text/css" />
+        <script defer src="index.js"></script>
         <script async src="gen_validatorv31.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet"/>
@@ -1174,18 +1173,11 @@ module.exports = class {
                        
                 </div>
         </footer>
-        <script async src="scripts/script.js"></script>
         
-     
-                    
-                   
+         
+        </body>
 
-        
-            
-        
-</body>
-
-</html>
+        </html>
           
           `;
         }

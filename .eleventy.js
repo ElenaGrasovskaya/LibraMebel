@@ -26,10 +26,11 @@ const {
   LAYOUTS_DIRECTORY,
   FAVICONS_DIRECTORY,
   COMPONENTS_DIRECTORY,
+  GALLERY_DIRECTORY,
 } = require('./.eleventy/constants');
 
 module.exports = (config) => {
-  config.addShortcode(
+  /*config.addShortcode(
     'image',
     createImageShortcode({
       inputDirectory: path.join(
@@ -62,7 +63,7 @@ module.exports = (config) => {
       ),
       publicDirectory: path.join(IMAGES_DIRECTORY, FAVICONS_DIRECTORY),
     },
-  });
+  });*/
 
   config.addPlugin(styles, {
     publicDirectory: 'styles',
@@ -95,6 +96,14 @@ module.exports = (config) => {
   config.addPassthroughCopy({
     [path.join(
       SOURCE_DIRECTORY,
+      IMAGES_DIRECTORY,
+    )]:IMAGES_DIRECTORY,
+  });
+ 
+
+  config.addPassthroughCopy({
+    [path.join(
+      SOURCE_DIRECTORY,
       ASSETS_DIRECTORY,
       FONTS_DIRECTORY,
     )]: FONTS_DIRECTORY,
@@ -102,7 +111,6 @@ module.exports = (config) => {
   config.addPassthroughCopy({
     [path.join(
       SOURCE_DIRECTORY,
-      ASSETS_DIRECTORY,
       VIDEO_DIRECTORY,
     )]: VIDEO_DIRECTORY,
   });

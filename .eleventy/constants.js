@@ -24,7 +24,8 @@ const ASSETS_DIRECTORY = 'assets';
 /** Input directory for Eleventy. This is place where all source code lives. */
 const SOURCE_DIRECTORY = 'src';
 /** Directory for all images. */
-const IMAGES_DIRECTORY = 'images';
+const IMAGES_DIRECTORY = 'img';
+const GALLERY_DIRECTORY = 'gallery';
 /**
  * Directory for styles.
  * Root files in this directory must corresponds to
