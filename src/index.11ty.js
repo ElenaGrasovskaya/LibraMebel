@@ -6,7 +6,7 @@ module.exports = class {
             lang: 'ru',
             title: 'LibraМебель - проектируем комфорт для вашей кухни спальни ванной гостинной прихожей или детской на заказ в Одессе',
             layout: 'base',
-            styles: 'index.scss',
+            styles: 'index.css',
             scripts: 'index.js',
             keywords: 'кухни на заказ в Одессе, дизайн кухни одесса, заказать кухню в одессе, интерьер кухни фото, кухня стили интерьера, кухни на заказ одесса малиновский рынок, шкафы купе в прихожую встраиваемые, шкаф купе в наполнение, кухня рисунок, кухни с фотопечатью, кухня массив, шкафы наполнение, цены на кухни на заказ в Одессе, кухни на заказ одесса малиновский, кухня пластик, производство мебели в Одессе, установка мебели в Одессе, libra, либра Одесса, либрамебель, кухни в Одессе',
             permalink: 'index.html',
@@ -23,7 +23,7 @@ module.exports = class {
 <head>
         
         <link href="styles/index.css" media="screen" rel="stylesheet" type="text/css" />
-        <script defer src="index.js"></script>
+        <script async src="index.js"></script>
         <script async src="gen_validatorv31.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet"/>
@@ -52,8 +52,6 @@ module.exports = class {
 
   gtag('config', 'UA-154428128-1');
 </script>
-
-<script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -134,7 +132,7 @@ module.exports = class {
                                                                     setTimeout(function() {
                                                                         submitButton.value = "Отправляю...";
                                                                         submitButton.disabled = true;
-                                                                    }, 1);
+                                                                    }, 1000);
                                                                 });
                                                             </script> 
 
@@ -1173,7 +1171,7 @@ module.exports = class {
                        
                 </div>
         </footer>
-        
+
          
         </body>
 

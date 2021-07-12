@@ -1,41 +1,32 @@
   
 const path = require('path');
-
 const url = require('postcss-url');
 const htmlmin = require('html-minifier');
-const sitemap = require('@quasibit/eleventy-plugin-sitemap');
-const { cache } = require('eleventy-plugin-workbox');
-const { icons } = require('eleventy-plugin-pwa-icons');
 const { styles } = require('eleventy-plugin-styles');
-const { scripts } = require('eleventy-plugin-scripts');
 const { compress } = require('eleventy-plugin-compress');
-const { createImageShortcode } = require('eleventy-shortcode-image');
 
 const { processUrl } = require('./.eleventy/process_url');
 const {
-  FAVICON_FILE,
-  MANIFEST_FILE,
+  
   DATA_DIRECTORY,
-  FONTS_DIRECTORY,
-  AUDIO_DIRECTORY,
+  
   VIDEO_DIRECTORY,
   BUILD_DIRECTORY,
-  ASSETS_DIRECTORY,
+  
   IMAGES_DIRECTORY,
   SOURCE_DIRECTORY,
   LAYOUTS_DIRECTORY,
-  FAVICONS_DIRECTORY,
+
   COMPONENTS_DIRECTORY,
-  GALLERY_DIRECTORY,
+
 } = require('./.eleventy/constants');
 
-module.exports = (config) => {
-  /*config.addShortcode(
-    'image',
+module.exports = (config) => {/*
+  config.addShortcode(
+    'img',
     createImageShortcode({
       inputDirectory: path.join(
         SOURCE_DIRECTORY,
-        ASSETS_DIRECTORY,
         IMAGES_DIRECTORY,
       ),
       outputDirectory: path.join(BUILD_DIRECTORY, IMAGES_DIRECTORY),
@@ -70,9 +61,7 @@ module.exports = (config) => {
     // Optimizes and rebases urls in styles.
     postcssPlugins: [url({ url: processUrl })],
   });
-  config.addPlugin(scripts, {
-    publicDirectory: 'scripts',
-  });
+
 
   // Minify HTML.
   config.addTransform('htmlmin', function (content, outputPath) {
@@ -92,38 +81,40 @@ module.exports = (config) => {
   // Because result of transformation will not be compressed.
 
   config.setWatchThrottleWaitTime(500);
-
   config.addPassthroughCopy({
     [path.join(
       SOURCE_DIRECTORY,
       IMAGES_DIRECTORY,
-    )]:IMAGES_DIRECTORY,
+    )]: IMAGES_DIRECTORY,
   });
- 
 
-  config.addPassthroughCopy({
-    [path.join(
-      SOURCE_DIRECTORY,
-      ASSETS_DIRECTORY,
-      FONTS_DIRECTORY,
-    )]: FONTS_DIRECTORY,
-  });
+
   config.addPassthroughCopy({
     [path.join(
       SOURCE_DIRECTORY,
       VIDEO_DIRECTORY,
     )]: VIDEO_DIRECTORY,
   });
+
   config.addPassthroughCopy({
     [path.join(
       SOURCE_DIRECTORY,
-      ASSETS_DIRECTORY,
-      AUDIO_DIRECTORY,
-    )]: AUDIO_DIRECTORY,
+      'gallery',
+    )]:'gallery',
   });
-  config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'robots.txt'));
 
-  config.addWatchTarget(path.join(SOURCE_DIRECTORY, ASSETS_DIRECTORY));
+  config.addPassthroughCopy({
+    [path.join(
+      SOURCE_DIRECTORY,
+      'thumbnails',
+    )]:'thumbnails',
+  });
+  
+  config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'robots.txt'));
+  config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'gen_validatorv31.js'));
+  config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'index.js'));
+
+
 
   return {
     dir: {

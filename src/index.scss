@@ -331,7 +331,7 @@ font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
   position: static;
   width: 100%;
   display: block;
-  background-image: url("img/gallery_background.png"); /* The image used */
+  background-image: url("gallery_background.png"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 50%; /* You must set a specified height */
   background-position: center; /* Center the image */
@@ -785,7 +785,7 @@ width: 70%;
 {
   display: block;
   margin: 0 auto;
-  background-image: url("img/white_romb.png");
+  background-image: url("white_romb.png");
   background-repeat: no-repeat;
   background-position-x: center;
   width: 80%;
@@ -1106,7 +1106,7 @@ padding-top: 70px;
   width: 100%;
   display: block;
   background-color: grey;
-  background-image: url(img/concrete.jpg);
+  background-image: url(concrete.jpg);
   background-repeat: repeat;
   height: 30%;
 }
@@ -1626,15 +1626,15 @@ padding-top: 70px;
 
 .gallery
 {
-  margin-top: 600px;
+  margin-top: 500px;
   width: 100%;
   display: block;
-  background-image: url("img/gallery_background.png"); /* The image used */
+  background-image: url("gallery_background.png"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 50%; /* You must set a specified height */
   background-position: center; /* Center the image */
  
-  margin:none;
+  
 
 }
 #goBack
@@ -2018,7 +2018,7 @@ width: 90%;
 {
   display: block;
   margin: 0 auto;
-  background-image: url("img/white_romb.png");
+  background-image: url("white_romb.png");
   background-repeat: no-repeat;
   background-position-x: center;
   width: 80%;
@@ -2823,7 +2823,7 @@ img.hover-shadow {
 {
   width: 100%;
   display: block;
-  background-image: url("img/offers_background.jpg"); /* The image used */
+  background-image: url("offers_background.jpg"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 30%; /* You must set a specified height */
   background-position: center; /* Center the image */
@@ -2846,7 +2846,7 @@ display: flex;
 {
   width: 100%;
   display: block;
-  background-image: url("img/solutions_background.jpg"); /* The image used */
+  background-image: url("solutions_background.jpg"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 30%; /* You must set a specified height */
   background-repeat: repeat; /* Do not repeat the image */
@@ -2861,7 +2861,7 @@ display: flex;
   color:#ABC038;
   padding: 15px 30px;
   margin: 0;
-  background-image: url("img/romb.png");
+  background-image: url("romb.png");
   display: block;
   width: 120px;
   height: 120px;
@@ -2873,7 +2873,7 @@ display: flex;
   font-family: Georgia;
   color: #595959;
 
-  background-image: url("img/neromb.png");
+  background-image: url("neromb.png");
   display: block;
   width: 120px;
   height: 120px;
@@ -2889,7 +2889,7 @@ display: flex;
 {
   width: 100%;
   display: block;
-  background-image: url("img/numbers_background.jpg"); /* The image used */
+  background-image: url("numbers_background.jpg"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: auto;
 
@@ -2920,7 +2920,7 @@ display: flex;
   width: 100%;
   display: block;
   background-color: grey; /* Used if the image is unavailable */
-  background-image: url("img/concrete.jpg"); /* The image used */
+  background-image: url("concrete.jpg"); /* The image used */
   background-repeat: repeat;
   height: 30%; /* You must set a specified height */
   margin:none;
@@ -2951,7 +2951,7 @@ display: flex;
   display: block;
   margin:none;
   background-color: grey; /* Used if the image is unavailable */
-  background-image: url("img/calcForm_background.jpg"); /* The image used */
+  background-image: url("calcForm_background.jpg"); /* The image used */
   background-repeat: cover;
 }
 
