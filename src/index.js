@@ -152,9 +152,9 @@ function openModal() {
 // Close the Modal
 function closeModal() {
   document.getElementById("myModal").style.display = "none";
-  turnTabs(0);
-  turnpage(100);
-  }
+
+
+   }
 
 
 showSlides(slideIndex);
@@ -296,14 +296,14 @@ function showSubSlides(k)
 
 function animatePageOff()
 {
-  void page.offsetWidth;
+ 
   page.style.animationName = "newPageOff";
   console.log(page.style.animationName);
   
 }
 function animatePageOn()
 {
-  void page.offsetWidth;
+ 
   page.style.animationName = "newPageOn";
   console.log(page.style.animationName);
 
@@ -389,7 +389,7 @@ function turnTabs(tab)
  let lightbox = document.getElementsByClassName("viewport");
  let subimage = document.getElementsByClassName("demo");
  let pageText = document.getElementById("pageText");
-
+ 
  animatePageOff();
 
  page.style.opacity = 0;
@@ -448,9 +448,6 @@ function turnTabs(tab)
   
  
 }
-
-
-
 
 
 function hideText()
@@ -522,10 +519,33 @@ function showText2()
     }
     
   }, 300);
+   
+}
+
+
+function morePhotos()
+{
+  let moreGallery = document.getElementById("touchsurface");
+  let container = document.getElementById("gallery-container");
+  let moreButton = document.getElementById("more_btn");
+  alert(moreButton);
   
  
+  
+  
+  let thisPage = "page1";
+  pageNum++;
+  let newPage = "page"+ pageNum;
+  let moreGalleryHTML = moreGallery.innerHTML;
+  let newGallery = moreGalleryHTML.replaceAll(thisPage,newPage);
+ 
+  container.innerHTML+=newGallery;
 
+  if(pageNum===6)
+  {
+    alert(6);
+    
+  }
 
 
 }
-

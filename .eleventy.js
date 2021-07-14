@@ -1,9 +1,16 @@
-  
+
+
 const path = require('path');
+
 const url = require('postcss-url');
 const htmlmin = require('html-minifier');
+const sitemap = require('@quasibit/eleventy-plugin-sitemap');
+const { cache } = require('eleventy-plugin-workbox');
+const { icons } = require('eleventy-plugin-pwa-icons');
 const { styles } = require('eleventy-plugin-styles');
+const { scripts } = require('eleventy-plugin-scripts');
 const { compress } = require('eleventy-plugin-compress');
+const { createImageShortcode } = require('eleventy-shortcode-image');
 
 const { processUrl } = require('./.eleventy/process_url');
 const {
@@ -113,6 +120,7 @@ module.exports = (config) => {/*
   config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'robots.txt'));
   config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'gen_validatorv31.js'));
   config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'index.js'));
+  config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'index.jcss'));
 
 
 

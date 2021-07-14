@@ -147,14 +147,14 @@ module.exports = class {
         </section>
         <section class="gallery" id="gallery">
                 <h2>НАШИ РАБОТЫ</h2>
-                <div class="gallery-nav">
+                <!--<div class="gallery-nav">
                         <a id = "kitchen" class="tabs-active" onclick="turnTabs(0)"><h3>КУХНИ</h3></a>
                         <a id = "wardrobe" class="tabs" onclick="turnTabs(1)"><h3>ШКАФЫ</h3></a>
                         <a id = "bathroom" class="tabs" onclick="turnTabs(2)"><h3>ВАННЫЕ КОМНАТЫ</h3></a>
                         <a id = "other" class="tabs" onclick="turnTabs(3)"><h3>РАЗНОЕ</h3></a>
-                </div> 
+                </div> -->
                
-                <div class="gallery-container">
+                <div class="gallery-container" id = "gallery-container">
                         <div class="gallery-container-page" id="touchsurface">
                                 <!-- Images used to open the lightbox -->
                                 <div class="row">
@@ -201,8 +201,9 @@ module.exports = class {
                                 </div>
                         </div>
                         
-                                <div class="pageturn"><a class="prev-page" onclick="turnpage(-1);"  >&#10094;</a> <a class="pagenum" onclick="turnpage(1);animatePage()" id = "pageText" href="index.html#gallery">1/6</a>
-                                <a class="next-page" onclick="turnpage(1);"  >&#10095;</a></div>
+                               <!-- <div class="pageturn"><a class="prev-page" onclick="turnpage(-1);"  >&#10094;</a> <a class="pagenum" onclick="turnpage(1);animatePage()" id = "pageText" href="index.html#gallery">1/6</a>
+                                <a class="next-page" onclick="turnpage(1);"  >&#10095;</a></div>-->
+                                
                                 
       
                                 <!-- The Modal/Lightbox -->
@@ -303,7 +304,7 @@ module.exports = class {
                         
 
                                 </div>
-                        <div class="video-mobile">
+                        <!--<div class="video-mobile">
                                 <video src="video/kitchen1.mp4"  controls="none" poster="img/posterimage1.jpg" type="video/mp4">
                                         Sorry, your browser doesn't support embedded videos, 
                                         but don't worry, you can <a href="video/kitchen1.mp4">download it</a>
@@ -319,9 +320,10 @@ module.exports = class {
                                         but don't worry, you can <a href="video/kitchen2.mp4">download it</a>
                                         and watch it with your favorite video player!
                                 </video>
-                        </div>
+                        </div>-->
 
                 </div>
+                <button class="more_btn" onclick="morePhotos()" id="moreButton">Ещё</button>
                 
         </section> 
         <section class="offers" >

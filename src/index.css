@@ -336,7 +336,7 @@ font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
   height: 50%; /* You must set a specified height */
   background-position: center; /* Center the image */
   
-  
+  padding-bottom: 30px;
   margin:none;
 
 }
@@ -410,10 +410,8 @@ cursor: pointer;
 
 .gallery-container
 {
-  margin-left: 15%;
-  margin-top: 0%;
-
-  width:70%;
+  margin: 0 auto;
+  width:90%;
   min-height: 550px;
 
 }
@@ -1714,9 +1712,6 @@ cursor: pointer;
 
 }
 
-
-
-
 .gallery-container-page
 {
 
@@ -2777,7 +2772,9 @@ img.hover-shadow {
 }
 
 .hover-shadow:hover {
+  transform: scale(1.3); 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 }
 
 
@@ -2808,7 +2805,6 @@ img.hover-shadow {
 {
   width: 90%;
   height: 90%;
-  padding:10px;
   object-fit: cover;
   display: block;
   margin: auto;
@@ -3133,6 +3129,21 @@ color: #cccccc;
 
 overflow: hidden;
 background-color: white;
+
+}
+
+.more_btn
+{
+  display: block;
+  margin: 0 auto;
+  width: 30vw;
+  height: 5vh;
+  background-color: #ABC038;
+  border: none;
+  border-radius: 3px;
+  color:#FFFFFF;
+  font-size: large;
+  font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
 
 }
 
