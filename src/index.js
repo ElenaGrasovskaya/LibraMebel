@@ -126,6 +126,7 @@ document.addEventListener('swiped-right', function(e) {
 let tabs = ["kitchen","wardrobe","bathroom","other"];
 let currentTab = 0;
 let pageNum=1;
+let thePage=1;
 
 const pageMax=[6,1,1,2];
 const noThumbPage= 
@@ -157,13 +158,12 @@ function closeModal() {
    }
 
 
-showSlides(slideIndex);
+//showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
   
-  
-  if ((slideIndex+n)==13)
+   if ((slideIndex+n)==13)
   {
     pageNum++;
     if(pageNum>pageMax[currentTab])
@@ -193,27 +193,31 @@ function plusSlides(n) {
   {
     console.log("slideIndex is strange");
     showSlides(slideIndex+n);
-
-
   }
-  console.log("pageNum="+pageNum + " currentTab="+currentTab+ " slideIndex"+slideIndex);
+  console.log("pageNum="+thePage + " currentTab="+currentTab+ " slideIndex"+slideIndex);
  
 }
 
 // Thumbnail image controls
-function currentSlide(n) {
+function currentSlide(n, slide) {
+  
+  let pos = Number(slide.src.search("page"))+4;
+  thePage= Number(slide.src[pos]);
+    
 
   slideIndex=n;
   showSlides(slideIndex);
 }
 
 function showSlides(n) {
+  
 
   
   let i;
   const slides = document.getElementsByClassName("mySlides");
   const dots = document.getElementsByClassName("demo");
   const slideNum = document.getElementsByClassName("numbertext");
+
   
 
   showSubSlides(1);
@@ -222,16 +226,16 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  slideNum[slideIndex-1].innerHTML = Number(Number(slideIndex) + (pageNum-1)*12) + " / " + maxSlides;
+  slideNum[slideIndex-1].innerHTML = Number(Number(slideIndex) + (thePage-1)*12) + " / " + maxSlides;
     
   for (i = 0; i < dots.length; i++) {
     
     dots[i].className = dots[i].className.replace(" active", "");
     
-    dots[i].src = "thumbnails/"+tabs[currentTab]+"/page"+pageNum+"/"+n+"_"+(i+1)+".jpg";
+    dots[i].src = "thumbnails/"+tabs[currentTab]+"/page"+thePage+"/"+n+"_"+(i+1)+".jpg";
     dots[i].style.display = "block";
   }
-  slides[slideIndex-1].innerHTML =slides[slideIndex-1].innerHTML.replace(/page./i,"page"+pageNum);  //Вот тут я меняю номер страницы если вдруг пролистывание завело на следующую
+  slides[slideIndex-1].innerHTML =slides[slideIndex-1].innerHTML.replace(/page./i,"page"+thePage);  //Вот тут я меняю номер страницы если вдруг пролистывание завело на следующую
 
 
   if(dots[0])
@@ -239,7 +243,7 @@ function showSlides(n) {
   if(slides[slideIndex-1])
   slides[slideIndex-1].style.display = "block";
   
-  if(noThumbPage[currentTab][pageNum-1])
+  if(noThumbPage[currentTab][thePage-1])
   {
     for (i = 0; i < dots.length; i++)
     {
@@ -523,16 +527,11 @@ function showText2()
 }
 
 
-function morePhotos()
+function morePhotos(moreButton)
 {
   let moreGallery = document.getElementById("touchsurface");
   let container = document.getElementById("gallery-container");
-  let moreButton = document.getElementById("more_btn");
-  alert(moreButton);
-  
- 
-  
-  
+    
   let thisPage = "page1";
   pageNum++;
   let newPage = "page"+ pageNum;
@@ -541,9 +540,9 @@ function morePhotos()
  
   container.innerHTML+=newGallery;
 
-  if(pageNum===6)
+  if(pageNum===pageMax[0])
   {
-    alert(6);
+    moreButton.style.display = "none";
     
   }
 

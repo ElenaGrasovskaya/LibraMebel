@@ -418,10 +418,10 @@ cursor: pointer;
 .gallery-container-page
 {
 
-padding: 10px;
-display: grid;
-grid-template-rows: 1fr 1fr 1fr;
-
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  animation: 1s ease-in 1s infinite reverse both running slidein;
 }
 #touchsurface
 {
@@ -460,12 +460,14 @@ grid-template-rows: 1fr 1fr 1fr;
 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  
 }
 .column img
 {
   width: 25%;
   height: auto;
   object-fit: cover;
+  animation: 1s ease-in 1s infinite reverse both running slidein;
 }
 
 .pageturn
@@ -1625,6 +1627,7 @@ padding-top: 70px;
 .gallery
 {
   margin-top: 500px;
+  padding-bottom: 30px;
   width: 100%;
   display: block;
   background-image: url("gallery_background.png"); /* The image used */
@@ -1718,6 +1721,7 @@ cursor: pointer;
   padding: 10px;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
+  animation: 1s ease-in 1s infinite reverse both running slidein;
 
 
 }
@@ -1733,10 +1737,12 @@ cursor: pointer;
 {
   display: grid;
   grid-template-columns: 1fr;
+  
 }
 .column img
 {
   width: 25%;
+  animation: 1s ease-in 1s infinite reverse both running slidein;
 
   object-fit: cover;
 

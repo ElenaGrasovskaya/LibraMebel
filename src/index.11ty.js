@@ -159,44 +159,44 @@ module.exports = class {
                                 <!-- Images used to open the lightbox -->
                                 <div class="row">
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/1_1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" alt="Кухня массив классика на заказ в Одессе"><!--<span class="description">Wonderfull kitchen description</span>-->
+                                        <img src="thumbnails/kitchen/page1/1_1.jpg" onclick="openModal();currentSlide(1, this)" class="hover-shadow" alt="Кухня массив классика на заказ в Одессе"><!--<span class="description">Wonderfull kitchen description</span>-->
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/2_1.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow" alt="Кухня ДСП модерн на заказ в Одессе ">
+                                        <img src="thumbnails/kitchen/page1/2_1.jpg" onclick="openModal();currentSlide(2, this)" class="hover-shadow" alt="Кухня ДСП модерн на заказ в Одессе ">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/3_1.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" alt="Кухня массив классическая на заказ в Одессе">
+                                        <img src="thumbnails/kitchen/page1/3_1.jpg" onclick="openModal();currentSlide(3, this)" class="hover-shadow" alt="Кухня массив классическая на заказ в Одессе">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/4_1.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow" alt="Кухня акрил минимализм на заказ в Одессе">
+                                        <img src="thumbnails/kitchen/page1/4_1.jpg" onclick="openModal();currentSlide(4, this)" class="hover-shadow" alt="Кухня акрил минимализм на заказ в Одессе">
                                         </div>
                                 </div>
                                 <div class="row">
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/5_1.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow" alt="Кухня МДФ модерн на заказ в Одессе">
+                                        <img src="thumbnails/kitchen/page1/5_1.jpg" onclick="openModal();currentSlide(5, this)" class="hover-shadow" alt="Кухня МДФ модерн на заказ в Одессе">
                                         </div>
                                         <div class="column">   
-                                        <img src="thumbnails/kitchen/page1/6_1.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow" alt="Кухня акрил модерн на заказ в Одессе">
+                                        <img src="thumbnails/kitchen/page1/6_1.jpg" onclick="openModal();currentSlide(6, this)" class="hover-shadow" alt="Кухня акрил модерн на заказ в Одессе">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/7_1.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow" alt="Кухня акрил скандинавский минимализм на заказ в Одессе">
+                                        <img src="thumbnails/kitchen/page1/7_1.jpg" onclick="openModal();currentSlide(7, this)" class="hover-shadow" alt="Кухня акрил скандинавский минимализм на заказ в Одессе">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/8_1.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow" alt="Кухня ДСП минимализм модерн на заказ в Одессе">
+                                        <img src="thumbnails/kitchen/page1/8_1.jpg" onclick="openModal();currentSlide(8, this)" class="hover-shadow" alt="Кухня ДСП минимализм модерн на заказ в Одессе">
                                         </div>
                                 </div>
                                 <div class="row">
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/9_1.jpg" onclick="openModal();currentSlide(9)" class="hover-shadow" alt="Кухня модерн на заказ в Одессе">
+                                        <img src="thumbnails/kitchen/page1/9_1.jpg" onclick="openModal();currentSlide(9, this)" class="hover-shadow" alt="Кухня модерн на заказ в Одессе">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/10_1.jpg" onclick="openModal();currentSlide(10)" class="hover-shadow" alt="Кухня массив прованс на заказ в Одессе ">
+                                        <img src="thumbnails/kitchen/page1/10_1.jpg" onclick="openModal();currentSlide(10, this)" class="hover-shadow" alt="Кухня массив прованс на заказ в Одессе ">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/11_1.jpg" onclick="openModal();currentSlide(11)" class="hover-shadow" alt="Кухня ДСП минимализм модерн на заказ в Одессе">
+                                        <img src="thumbnails/kitchen/page1/11_1.jpg" onclick="openModal();currentSlide(11, this)" class="hover-shadow" alt="Кухня ДСП минимализм модерн на заказ в Одессе">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/12_1.jpg" onclick="openModal();currentSlide(12)" class="hover-shadow"  alt="Кухня ДСП акрил минимализм на заказ в Одессе">
+                                        <img src="thumbnails/kitchen/page1/12_1.jpg" onclick="openModal();currentSlide(12, this)" class="hover-shadow"  alt="Кухня ДСП акрил минимализм на заказ в Одессе">
                                         </div>
                                 </div>
                         </div>
@@ -323,7 +323,7 @@ module.exports = class {
                         </div>-->
 
                 </div>
-                <button class="more_btn" onclick="morePhotos()" id="moreButton">Ещё</button>
+                <button class="more_btn" onclick="morePhotos(this)" id="moreButton">Ещё</button>
                 
         </section> 
         <section class="offers" >
