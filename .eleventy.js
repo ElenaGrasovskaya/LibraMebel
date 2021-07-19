@@ -120,7 +120,8 @@ module.exports = (config) => {/*
   config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'robots.txt'));
   config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'gen_validatorv31.js'));
   config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'index.js'));
-  config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'index.jcss'));
+  config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'index.css'));
+  config.addPassthroughCopy(path.join(SOURCE_DIRECTORY, 'lazysizes.min.js'));
 
 
 

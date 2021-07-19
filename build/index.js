@@ -446,11 +446,6 @@ function turnTabs(tab)
     currentTab=tab;
     pageNum=1;
    
-  
-    
-  
-  
- 
 }
 
 
@@ -526,20 +521,20 @@ function showText2()
    
 }
 
-
 function morePhotos(moreButton)
 {
   let moreGallery = document.getElementById("touchsurface");
   let container = document.getElementById("gallery-container");
-    
+  
   let thisPage = "page1";
   pageNum++;
   let newPage = "page"+ pageNum;
   let moreGalleryHTML = moreGallery.innerHTML;
   let newGallery = moreGalleryHTML.replaceAll(thisPage,newPage);
+  
  
   container.innerHTML+=newGallery;
-
+ 
   if(pageNum===pageMax[0])
   {
     moreButton.style.display = "none";
