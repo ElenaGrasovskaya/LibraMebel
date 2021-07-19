@@ -21,9 +21,11 @@ module.exports = class {
 <html lang="ru-RU">
         
 <head>
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <link href="styles/index.css" media="screen" rel="stylesheet" type="text/css" />
+        <script src="lazysizes.min.js" async></script>
         <script async src="index.js"></script>
+        
         <script async src="gen_validatorv31.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet"/>
@@ -104,10 +106,10 @@ module.exports = class {
         <section class="hero">
                <div class="filter">
                         <div class="changeBackground">
-                                <img class="bottom" src="img/hero1.jpg" alt="LibraМебель, кухня на заказ в Одессе, Либра Мебель - заказать стильную и функциональную кухню" />
-                                <img class="top" src="img/hero2.jpg" alt="LibraМебель, кухня на заказ в Одессе, Либра Мебель - заказать стильную и функциональную кухню" />
-                                <img class="top" src="img/hero3.jpg" alt="LibraМебель, кухни на заказ в Одессе, Либра Мебель - заказать стильную и функциональную кухню"/>
-                                <img class="top" src="img/hero4.jpg" alt="LibraМебель, кухни под заказ в Одессе, Либра Мебель - заказать стильную и функциональную кухню"/>
+                                <img class="bottom lazyload" data-src="img/hero1.jpg" alt="LibraМебель, кухня на заказ в Одессе, Либра Мебель - заказать стильную и функциональную кухню" />
+                                <img class="top lazyload" data-src="img/hero2.jpg" alt="LibraМебель, кухня на заказ в Одессе, Либра Мебель - заказать стильную и функциональную кухню" />
+                                <img class="top lazyload" data-src="img/hero3.jpg" alt="LibraМебель, кухни на заказ в Одессе, Либра Мебель - заказать стильную и функциональную кухню"/>
+                                <img class="top lazyload" data-src="img/hero4.jpg" alt="LibraМебель, кухни под заказ в Одессе, Либра Мебель - заказать стильную и функциональную кухню"/>
                                 <div class="hero-grid-container">
                                      <div class="hero-grid-item">
                                              <h2>ПРОЕКТИРОВАНИЕ И ИЗГОТОВЛЕНИЕ МЕБЕЛИ НА ЗАКАЗ</h2>
@@ -146,7 +148,7 @@ module.exports = class {
                </div>
         </section>
         <section class="gallery" id="gallery">
-                <h2>НАШИ РАБОТЫ</h2>
+                <h2  >НАШИ РАБОТЫ</h2>
                 <!--<div class="gallery-nav">
                         <a id = "kitchen" class="tabs-active" onclick="turnTabs(0)"><h3>КУХНИ</h3></a>
                         <a id = "wardrobe" class="tabs" onclick="turnTabs(1)"><h3>ШКАФЫ</h3></a>
@@ -156,49 +158,51 @@ module.exports = class {
                
                 <div class="gallery-container" id = "gallery-container">
                         <div class="gallery-container-page" id="touchsurface">
+                               
                                 <!-- Images used to open the lightbox -->
                                 <div class="row">
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/1_1.jpg" onclick="openModal();currentSlide(1, this)" class="hover-shadow" alt="Кухня массив классика на заказ в Одессе"><!--<span class="description">Wonderfull kitchen description</span>-->
+                                        <img data-src="thumbnails/kitchen/page1/1_1.jpg" onclick="openModal();currentSlide(1, this)" class="hover-shadow lazyload" alt="Кухня массив классика на заказ в Одессе"><!--<span class="description">Wonderfull kitchen description</span>-->
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/2_1.jpg" onclick="openModal();currentSlide(2, this)" class="hover-shadow" alt="Кухня ДСП модерн на заказ в Одессе ">
+                                        <img data-src="thumbnails/kitchen/page1/2_1.jpg" onclick="openModal();currentSlide(2, this)" class="hover-shadow lazyload" alt="Кухня ДСП модерн на заказ в Одессе ">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/3_1.jpg" onclick="openModal();currentSlide(3, this)" class="hover-shadow" alt="Кухня массив классическая на заказ в Одессе">
+                                        <img data-src="thumbnails/kitchen/page1/3_1.jpg" onclick="openModal();currentSlide(3, this)" class="hover-shadow lazyload" alt="Кухня массив классическая на заказ в Одессе">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/4_1.jpg" onclick="openModal();currentSlide(4, this)" class="hover-shadow" alt="Кухня акрил минимализм на заказ в Одессе">
+                                        <img data-src="thumbnails/kitchen/page1/4_1.jpg" onclick="openModal();currentSlide(4, this)" class="hover-shadow lazyload" alt="Кухня акрил минимализм на заказ в Одессе">
                                         </div>
                                 </div>
                                 <div class="row">
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/5_1.jpg" onclick="openModal();currentSlide(5, this)" class="hover-shadow" alt="Кухня МДФ модерн на заказ в Одессе">
+                                        <img data-src="thumbnails/kitchen/page1/5_1.jpg" onclick="openModal();currentSlide(5, this)" class="hover-shadow lazyload" alt="Кухня МДФ модерн на заказ в Одессе">
                                         </div>
                                         <div class="column">   
-                                        <img src="thumbnails/kitchen/page1/6_1.jpg" onclick="openModal();currentSlide(6, this)" class="hover-shadow" alt="Кухня акрил модерн на заказ в Одессе">
+                                        <img data-src="thumbnails/kitchen/page1/6_1.jpg" onclick="openModal();currentSlide(6, this)" class="hover-shadow lazyload" alt="Кухня акрил модерн на заказ в Одессе">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/7_1.jpg" onclick="openModal();currentSlide(7, this)" class="hover-shadow" alt="Кухня акрил скандинавский минимализм на заказ в Одессе">
+                                        <img data-src="thumbnails/kitchen/page1/7_1.jpg" onclick="openModal();currentSlide(7, this)" class="hover-shadow lazyload" alt="Кухня акрил скандинавский минимализм на заказ в Одессе">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/8_1.jpg" onclick="openModal();currentSlide(8, this)" class="hover-shadow" alt="Кухня ДСП минимализм модерн на заказ в Одессе">
+                                        <img data-src="thumbnails/kitchen/page1/8_1.jpg" onclick="openModal();currentSlide(8, this)" class="hover-shadow lazyload" alt="Кухня ДСП минимализм модерн на заказ в Одессе">
                                         </div>
                                 </div>
                                 <div class="row">
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/9_1.jpg" onclick="openModal();currentSlide(9, this)" class="hover-shadow" alt="Кухня модерн на заказ в Одессе">
+                                        <img data-src="thumbnails/kitchen/page1/9_1.jpg" onclick="openModal();currentSlide(9, this)" class="hover-shadow lazyload" alt="Кухня модерн на заказ в Одессе">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/10_1.jpg" onclick="openModal();currentSlide(10, this)" class="hover-shadow" alt="Кухня массив прованс на заказ в Одессе ">
+                                        <img data-src="thumbnails/kitchen/page1/10_1.jpg" onclick="openModal();currentSlide(10, this)" class="hover-shadow lazyload" alt="Кухня массив прованс на заказ в Одессе ">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/11_1.jpg" onclick="openModal();currentSlide(11, this)" class="hover-shadow" alt="Кухня ДСП минимализм модерн на заказ в Одессе">
+                                        <img data-src="thumbnails/kitchen/page1/11_1.jpg" onclick="openModal();currentSlide(11, this)" class="hover-shadow lazyload" alt="Кухня ДСП минимализм модерн на заказ в Одессе">
                                         </div>
                                         <div class="column">
-                                        <img src="thumbnails/kitchen/page1/12_1.jpg" onclick="openModal();currentSlide(12, this)" class="hover-shadow"  alt="Кухня ДСП акрил минимализм на заказ в Одессе">
+                                        <img data-src="thumbnails/kitchen/page1/12_1.jpg" onclick="openModal();currentSlide(12, this)" class="hover-shadow lazyload"  alt="Кухня ДСП акрил минимализм на заказ в Одессе">
                                         </div>
                                 </div>
+                        
                         </div>
                         
                                <!-- <div class="pageturn"><a class="prev-page" onclick="turnpage(-1);"  >&#10094;</a> <a class="pagenum" onclick="turnpage(1);animatePage()" id = "pageText" href="index.html#gallery">1/6</a>
@@ -213,62 +217,62 @@ module.exports = class {
                                 
                                         <div class="mySlides">
                                         <div class="numbertext">1 / 12</div>
-                                        <img class="viewport" src="gallery/kitchen/page1/1_1.jpg"  alt="Кухня">
+                                        <img class="viewport lazyload" data-src="gallery/kitchen/page1/1_1.jpg"  alt="Кухня">
                                         </div>
                                 
                                         <div class="mySlides">
                                         <div class="numbertext">2 / 12</div>
-                                        <img class="viewport" src="gallery/kitchen/page1/2_1.jpg"  alt="Кухня">
+                                        <img class="viewport lazyload" data-src="gallery/kitchen/page1/2_1.jpg"  alt="Кухня">
                                         </div>
                                 
                                         <div class="mySlides">
                                         <div class="numbertext">3 / 12</div>
-                                        <img class="viewport" src="gallery/kitchen/page1/3_1.jpg" alt="Кухня">
+                                        <img class="viewport lazyload" data-src="gallery/kitchen/page1/3_1.jpg" alt="Кухня">
                                         </div>
                                 
                                         <div class="mySlides">
                                         <div class="numbertext">4 / 12</div>
-                                        <img class="viewport" src="gallery/kitchen/page1/4_1.jpg"  alt="Кухня">
+                                        <img class="viewport lazyload" data-src="gallery/kitchen/page1/4_1.jpg"  alt="Кухня">
                                         </div>
 
                                         <div class="mySlides">
                                         <div class="numbertext">5 / 12</div>
-                                        <img class="viewport" src="gallery/kitchen/page1/5_1.jpg"  alt="Кухня">
+                                        <img class="viewport lazyload" data-src="gallery/kitchen/page1/5_1.jpg"  alt="Кухня">
                                         </div>
                                         
                                         <div class="mySlides">
                                         <div class="numbertext">6 / 12</div>
-                                        <img class="viewport" src="gallery/kitchen/page1/6_1.jpg"  alt="Кухня">
+                                        <img class="viewport lazyload" data-src="gallery/kitchen/page1/6_1.jpg"  alt="Кухня">
                                         </div>
                                         
                                         <div class="mySlides">
                                         <div class="numbertext">7 / 12</div>
-                                        <img class="viewport" src="gallery/kitchen/page1/7_1.jpg"  alt="Кухня">
+                                        <img class="viewport lazyload" data-src="gallery/kitchen/page1/7_1.jpg"  alt="Кухня">
                                         </div>
                                         
                                         <div class="mySlides">
                                         <div class="numbertext">8 / 12</div>
-                                        <img class="viewport" src="gallery/kitchen/page1/8_1.jpg" alt="Кухня">
+                                        <img class="viewport lazyload" data-src="gallery/kitchen/page1/8_1.jpg" alt="Кухня">
                                         </div>
 
                                         <div class="mySlides">
                                         <div class="numbertext">9 / 12</div>
-                                        <img class="viewport" src="gallery/kitchen/page1/9_1.jpg"  alt="Кухня">
+                                        <img class="viewport lazyload" data-src="gallery/kitchen/page1/9_1.jpg"  alt="Кухня">
                                         </div>
 
                                         <div class="mySlides">
                                         <div class="numbertext">10 / 12</div>
-                                        <img class="viewport" src="gallery/kitchen/page1/10_1.jpg"  alt="Кухня">
+                                        <img class="viewport lazyload" data-src="gallery/kitchen/page1/10_1.jpg"  alt="Кухня">
                                         </div>
 
                                         <div class="mySlides">
                                         <div class="numbertext">11 / 12</div>
-                                        <img class="viewport" src="gallery/kitchen/page1/11_1.jpg"  alt="Кухня">
+                                        <img class="viewport lazyload" data-src="gallery/kitchen/page1/11_1.jpg"  alt="Кухня">
                                         </div>
 
                                         <div class="mySlides">
                                         <div class="numbertext">12 / 12</div>
-                                        <img class="viewport" src="gallery/kitchen/page1/12_1.jpg"  alt="Кухня">
+                                        <img class="viewport lazyload" data-src="gallery/kitchen/page1/12_1.jpg"  alt="Кухня">
                                         </div>
                                 
                                         <!-- Next/previous controls -->
@@ -280,19 +284,19 @@ module.exports = class {
                                         <!-- Thumbnail image controls -->
                                 <div class ="subimage">
                                         <div class="thumbnail">
-                                        <img class="demo" src="thumbnails/kitchen/page1/3_1.jpg" onclick="showSubSlides(1)"  alt="Кухня">
+                                        <img class="demo lazyload" data-src="thumbnails/kitchen/page1/3_1.jpg" onclick="showSubSlides(1)"  alt="Кухня">
                                         </div>
                                 
                                         <div class="thumbnail">
-                                        <img class="demo" src="thumbnails/kitchen/page1/3_2.jpg" onclick="showSubSlides(2)" alt="Кухня">
+                                        <img class="demo lazyload" data-src="thumbnails/kitchen/page1/3_2.jpg" onclick="showSubSlides(2)" alt="Кухня">
                                         </div>
                                 
                                         <div class="thumbnail">
-                                        <img class="demo" src="thumbnails/kitchen/page1/3_3.jpg" onclick="showSubSlides(3)" alt="Кухня">
+                                        <img class="demo lazyload" data-src="thumbnails/kitchen/page1/3_3.jpg" onclick="showSubSlides(3)" alt="Кухня">
                                         </div>
                                 
                                         <div class="thumbnail">
-                                        <img class="demo"  src="thumbnails/kitchen/page1/3_4.jpg" onclick="showSubSlides(4)" alt="Кухня">
+                                        <img class="demo lazyload"  data-src="thumbnails/kitchen/page1/3_4.jpg" onclick="showSubSlides(4)" alt="Кухня">
                                         </div>
                                         
                                                                               
