@@ -30,7 +30,10 @@ module.exports = class {
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap&subset=cyrillic" rel="stylesheet"/>
-        <link rel="icon" href="img/logo_transparent.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
         <title>LibraМебель - Заказать кухню в Одессе, стильную и функциональную</title>
         <!-- Google Tag Manager -->
         <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -64,7 +67,7 @@ module.exports = class {
         <section class="container-top">
             <div class="head-grid-container">
                 <div class="head-grid-item">
-                        <img class="logo" src="img/logo.jpg" alt="LibraМебель - кухни на заказ, шафы, гардеробные в Одессе, качественно и функционально">
+                        <img class="logo" src="img/logo.svg" alt="LibraМебель - кухни на заказ, шафы, гардеробные в Одессе, качественно и функционально">
                         <div class="logo-place">
                                 <h2 class="libra"><strong>Libra</strong>Мебель<br></h2>
                                 <h1 class="logo-text">Дизайн, производство и установка мебели в Одессе</h1>
