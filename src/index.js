@@ -220,7 +220,7 @@ function showSlides(n) {
 
   
 
-  showSubSlides(1);
+  //showSubSlides(1);
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
@@ -262,31 +262,33 @@ console.log("Image URL "+slides[slideIndex-1].innerHTML);
 
 function showSubSlides(k)
 {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var activeDot = document.getElementsByClassName("demo active");
-  var captionText = document.getElementById("caption");
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let activeDot = document.getElementsByClassName("demo active");
+  let captionText = document.getElementById("caption");
+  
   if (k==1)
   {
-    activeDot.className = "demo";
+    activeDot.className = "demo active";
   }
 
   
   
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+  slides[slideIndex-1].style.display = "none";
   
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  dots[k-1].className = dots[k-1].className.replace("demo", "demo active");
-  var inHTML = slides[slideIndex-1].innerHTML;
-  var pos = inHTML.search(".jpg");
-  var num = inHTML[pos-1];
-  var newInHTML = inHTML.replace(num+".jpg",k+".jpg");
-  
+  dots[k-1].className = dots[k-1].className.replaceAll("demo", "demo active");
+
+  let inHTML = slides[slideIndex-1].innerHTML;
+
+  let pos = inHTML.search(".jpg");
+  let num = inHTML[pos-1];
+
+  let newInHTML = inHTML.replaceAll(num+".jpg",k+".jpg");
+ 
   slides[slideIndex-1].innerHTML = newInHTML;
   
   

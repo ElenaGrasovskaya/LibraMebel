@@ -21,7 +21,7 @@ module.exports = class {
 <html lang="ru-RU">
         
 <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
         <link href="styles/index.css" media="screen" rel="stylesheet" type="text/css" />
         <script src="lazysizes.min.js" async></script>
         <script async src="index.js"></script>
@@ -43,7 +43,7 @@ module.exports = class {
         
   <meta name="description" content="LibraМебель - кухни на заказ в Одессе: дизайн, производство и установка кухонь и корпусной мебели на заказ в Одессе и Одесской области"/>
   <meta name="keywords" content="кухни на заказ в Одессе, дизайн кухни одесса, заказать кухню в одессе, интерьер кухни фото, кухня стили интерьера, кухни на заказ одесса малиновский рынок, шкафы купе в прихожую встраиваемые, шкаф купе в наполнение, кухня рисунок, кухни с фотопечатью, кухня массив, шкафы наполнение, цены на кухни на заказ в Одессе, кухни на заказ одесса малиновский, кухня пластик, производство мебели в Одессе, установка мебели в Одессе, libra, либра Одесса, либрамебель, кухни в Одессе"/>
-  <meta name="viewport" content="max-width=device-width, initial-scale=0.8">
+  <meta name="viewport" content="max-width=device-width, initial-scale=1">
   <meta name="yandex-verification" content="b12f9c241510eed0" />
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154428128-1"></script>
@@ -72,15 +72,15 @@ module.exports = class {
 
                 </div>
                 <div class="head-grid-item">
-                        <nav class="nav"><a href="index.html#gallery"><h3>НАШИ РАБОТЫ</h3></a></nav>
+                        <nav class="nav"><a href="index.html#gallery"><h3>ПРОЕКТЫ</h3></a></nav>
                 </div>
                 <div class="head-grid-item">
-                        <nav class="nav"><a href="index.html#questions"><h3>ВОПРОСЫ И ОТВЕТЫ</h3></a></nav>
+                        <nav class="nav"><a href="index.html#questions"><h3>ПОЛЕЗНОЕ</h3></a></nav>
                 </div>
                 <div class="head-grid-item">
-                                <nav class="nav"><a href="index.html#work"><h3>СХЕМА РАБОТЫ</h3></a></nav>
+                                <nav class="nav"><a href="index.html#work"><h3>ЭТАПЫ РАБОТЫ</h3></a></nav>
                 </div>
-                <div class="head-grid-item"><nav class="nav"><a href="index.html#price"><h3>КОМПЛЕКТАЦИЯ</h3></a></nav>
+                <div class="head-grid-item"><nav class="nav"><a href="index.html#price"><h3>КОМПЛЕКТАЦИИ</h3></a></nav>
                 </div>
                 <!--<div class="head-grid-item"><nav class="nav"><a href="index.html#form"><h3>ЗАКАЗАТЬ</h3></a></nav>
                 </div>-->
@@ -94,7 +94,7 @@ module.exports = class {
                         
                         
                 </div>
-                <div class="head-grid-item">
+                <div class="head-grid-item-social">
                 <a href="https://www.instagram.com/libramebel/"><img class="social" src="img/instagram.png" alt="Instagram"/></a>
                 <a href="https://www.facebook.com/libramebel/"><img class="social" src="img/facebook.png" alt="Facebook"/></a>
                 <a href="https://t.me/springlord"><img class="social" src="img/telegram.png" alt="Telegram"/></a>
@@ -148,7 +148,7 @@ module.exports = class {
                </div>
         </section>
         <section class="gallery" id="gallery">
-                <h2  >НАШИ РАБОТЫ</h2>
+                <h2>ПРОЕКТЫ</h2>
                 <!--<div class="gallery-nav">
                         <a id = "kitchen" class="tabs-active" onclick="turnTabs(0)"><h3>КУХНИ</h3></a>
                         <a id = "wardrobe" class="tabs" onclick="turnTabs(1)"><h3>ШКАФЫ</h3></a>
@@ -284,19 +284,19 @@ module.exports = class {
                                         <!-- Thumbnail image controls -->
                                 <div class ="subimage">
                                         <div class="thumbnail">
-                                        <img class="demo lazyload" data-src="thumbnails/kitchen/page1/3_1.jpg" onclick="showSubSlides(1)"  alt="Кухня">
+                                        <img class="demo" src="thumbnails/kitchen/page1/3_1.jpg" onclick="showSubSlides(1)"  alt="Кухня">
                                         </div>
                                 
                                         <div class="thumbnail">
-                                        <img class="demo lazyload" data-src="thumbnails/kitchen/page1/3_2.jpg" onclick="showSubSlides(2)" alt="Кухня">
+                                        <img class="demo" src="thumbnails/kitchen/page1/3_2.jpg" onclick="showSubSlides(2)" alt="Кухня">
                                         </div>
                                 
                                         <div class="thumbnail">
-                                        <img class="demo lazyload" data-src="thumbnails/kitchen/page1/3_3.jpg" onclick="showSubSlides(3)" alt="Кухня">
+                                        <img class="demo" src="thumbnails/kitchen/page1/3_3.jpg" onclick="showSubSlides(3)" alt="Кухня">
                                         </div>
                                 
                                         <div class="thumbnail">
-                                        <img class="demo lazyload"  data-src="thumbnails/kitchen/page1/3_4.jpg" onclick="showSubSlides(4)" alt="Кухня">
+                                        <img class="demo"  src="thumbnails/kitchen/page1/3_4.jpg" onclick="showSubSlides(4)" alt="Кухня">
                                         </div>
                                         
                                                                               
@@ -370,10 +370,10 @@ module.exports = class {
         <section class="prices" id="price">
 
                 <div class="prices-container">
-                        <h2>КОМПЛЕКТАЦИЯ</h2>
+                        <h2>КОМПЛЕКТАЦИИ</h2>
                         <div class="prices-grid">
                                 <div class="prices-item">
-                                        <img src="img/basic.jpg" alt="Кухня базовая ДСП минимализм"/>
+                                        <img class="lazyload" data-src="img/basic.jpg" alt="Кухня базовая ДСП минимализм"/>
                                         <h4>БАЗОВАЯ</h4>
                                         <ul class = "prices-list">
                                                 <li class="prices-points"> <p class="prices-text" ><span>&#10095;</span> Столешница – ДСП 38мм: </p>
@@ -420,7 +420,7 @@ module.exports = class {
                                 
                                 
                                 <div class="prices-item">
-                                        <img src="img/standart.jpg" alt="Кухня базовая краска МДФ модерн">
+                                        <img class="lazyload" data-src="img/standart.jpg" alt="Кухня базовая краска МДФ модерн">
                                         <h4>СТАНДАРТ</h4>
                                         <ul class = "prices-list">
                                                         <li class="prices-points"> <p class="prices-text" ><span>&#10095;</span> Столешница – ДСП 38мм:</p>
@@ -469,7 +469,7 @@ module.exports = class {
                                 
 
                                 <div class="prices-item">
-                                        <img src="img/premium.jpg" alt="Кухня базовая акрил дерево классическая">
+                                        <img class="lazyload" data-src="img/premium.jpg" alt="Кухня базовая акрил дерево классическая">
                                         <h4>ПРЕМИУМ</h4>
                                         <ul class = "prices-list">
                                                         <li class="prices-points"> <p class="prices-text"> <span>&#10095;</span> Столешница – искусственный камень:</p>
@@ -639,7 +639,7 @@ module.exports = class {
         </section>
         <section class="questions" id="questions">
                 <div class="questions-container">
-                        <h2>ВОПРОСЫ И ОТВЕТЫ</h2>
+                        <h2>ПОЛЕЗНОЕ</h2>
                         <div class="questions-grid">
                                 <!--<div class="questions-item-img">
                                         <img src="img/before_construction.jpg">
@@ -945,7 +945,7 @@ module.exports = class {
 
         <section class="creation" id="work">
                 <div class="creation-container">
-                        <h2>ПОЭТАПНОЕ СОЗДАНИЕ ИНТЕРЬЕРА КУХНИ</h2>
+                        <h2>ЭТАПЫ</h2>
                         <div class="creation-grid">
                                 <div class ="creation-item">
                                         <img src="img/creation1.png" alt="Creation step 1 icon" /> <h4>ЗАЯВКА</h4> 
@@ -1002,16 +1002,16 @@ module.exports = class {
                                     производителей, проверенных временем и опытом.</p></article>
                         <div class= "materials-grid">
                                 <div class="materials-item">
-                                        <img src="img/certificate1.jpg" alt="Сертификат Hettich"/>
+                                        <img class="lazyload" data-src="img/certificate1.jpg" alt="Сертификат Hettich"/>
                                 </div>
                                 <div class="materials-item">
-                                        <img src="img/certificate2.jpg" alt="Сертификат 2"/>
+                                        <img class="lazyload" data-src="img/certificate2.jpg" alt="Сертификат 2"/>
                                 </div>
                                 <div class="materials-item">
-                                        <img src="img/certificate3.jpg" alt="Сертификат 3"/>
+                                        <img class="lazyload" data-src="img/certificate3.jpg" alt="Сертификат 3"/>
                                 </div>
                                 <div class="materials-item">
-                                        <img src="img/certificate4.jpg" alt="Сертификат BLUM"/>
+                                        <img class="lazyload" data-src="img/certificate4.jpg" alt="Сертификат BLUM"/>
                                 </div>
 
                         </div>
@@ -1021,14 +1021,14 @@ module.exports = class {
 
         <section class="materials-logo">
                 <div class="materials-logo-container">
-                        <a href="https://www.blum.com/ua/ru/company/about-blum-ukraine/"><img src="img/blum.jpg" alt="BLUM" /></a>
-                        <a href="https://www.egger.com/shop/ru_UA/"><img src="img/egger.jpg" alt="EGGER" /></a>
-                        <a href="https://hafele.od.ua/"><img src="img/hafele.jpg" alt="HAFELE"/></a>
-                        <a href="https://web.hettich.com/uk-ua/golovna-storinka.jsp"><img src="img/hettich.jpg" alt="ETTICH" /></a>
-                        <a href="https://raumplus.ua/"><img src="img/raumplus.jpg" alt="RAUMPLUS" /></a>
-                        <a href="https://www.scilm.it/en/"><img src="img/scilm.jpg" alt="SCILM"/></a>
-                        <a href="https://www.viboitaly.com/en/#1"><img src="img/vibo.jpg" alt="VIBO"/></a>
-                        <a href="https://zobal.com.pl/en/"><img src="img/zobal.jpg" alt="ZOBAL"/></a>
+                        <a href="https://www.blum.com/ua/ru/company/about-blum-ukraine/"><img class="lazyload" data-src="img/blum.jpg" alt="BLUM" /></a>
+                        <a href="https://www.egger.com/shop/ru_UA/"><img class="lazyload" data-src="img/egger.jpg" alt="EGGER" /></a>
+                        <a href="https://hafele.od.ua/"><img class="lazyload" data-src="img/hafele.jpg" alt="HAFELE"/></a>
+                        <a href="https://web.hettich.com/uk-ua/golovna-storinka.jsp"><img class="lazyload" data-src="img/hettich.jpg" alt="ETTICH" /></a>
+                        <a href="https://raumplus.ua/"><img class="lazyload" data-src="img/raumplus.jpg" alt="RAUMPLUS" /></a>
+                        <a href="https://www.scilm.it/en/"><img class="lazyload" data-src="img/scilm.jpg" alt="SCILM"/></a>
+                        <a href="https://www.viboitaly.com/en/#1"><img class="lazyload" data-src="img/vibo.jpg" alt="VIBO"/></a>
+                        <a href="https://zobal.com.pl/en/"><img class="lazyload" data-src="img/zobal.jpg" alt="ZOBAL"/></a>
 
                 </div>
 
