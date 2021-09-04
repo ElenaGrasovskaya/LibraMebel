@@ -1,2 +1,0 @@
-# LibraMebel
-LibraMebel website
