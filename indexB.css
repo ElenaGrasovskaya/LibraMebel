@@ -359,7 +359,6 @@
     padding: 10px;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    animation: 1s ease-in 1s infinite reverse both running slidein;
   }
   #touchsurface {
     animation-name: none;
@@ -403,11 +402,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+
   .column img {
-    width: 25%;
-    height: auto;
+    width: 90%;
+    height: 90%;
     object-fit: cover;
-    animation: 1s ease-in 1s infinite reverse both running slidein;
+    display: block;
+    margin: auto;
+    opacity: 1;
+    transition: 1 ease-out;
   }
 
   .pageturn {
@@ -454,6 +457,7 @@
     font-size: 60px;
     font-weight: bold;
     z-index: 1000;
+    cursor: pointer;
   }
 
   .close:hover,
@@ -548,6 +552,9 @@
     width: 100%;
     background-color: rgba(95, 95, 95, 0.1);
     object-fit: cover;
+
+    animation-name: newPageOn;
+    animation-duration: 1s;
   }
 
   /******************Offers Big****************/
@@ -871,8 +878,7 @@
     background-color: #363636;
   }
 
-  .footer-item-text p,
-  .footer-item-text a {
+  .footer-item-text p {
     color: #363636;
     font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
     font-size: 20px;
@@ -893,7 +899,7 @@
   .footer-item-text p {
     color: #363636;
     font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
-    font-size: 1.6em;
+    font-size: 1.8em;
     text-align: center;
     font-weight: 800;
     margin: 0;
@@ -904,9 +910,8 @@
     color: #363636;
     font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
     font-size: 1.6em;
-    text-align: center;
-    margin: 5px;
-    padding: 5px;
+    display: block;
+    margin: 0 50px;
   }
 
   .footer-item-text h4 {
@@ -1442,26 +1447,18 @@
 
   .gallery-container-page {
     padding: 10px;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    animation: 1s ease-in 1s infinite reverse both running slidein;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  /*.transition {
-  transition: opacity 0.5s ease-out;
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -ms-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  opacity: 0;
-}*/
+
   .row {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
   .column img {
-    width: 25%;
-    animation: 1s ease-in 1s infinite reverse both running slidein;
-
+    width: 96%;
+    margin: 2%;
     object-fit: cover;
   }
 
@@ -1977,7 +1974,7 @@
     font-size: 2.2em;
     text-align: center;
     margin: 5px;
-    padding: 5px;
+    padding: 5px auto;
   }
 
   .footer-item-text h4 {
@@ -2285,6 +2282,8 @@
   opacity: 0.6;
   width: 10px;
   object-fit: cover;
+  animation-name: newPageOn;
+  animation-duration: 1s;
 }
 
 .active,
@@ -2318,14 +2317,6 @@ img.hover-shadow {
 
 .description:hover {
   opacity: 0.7;
-}
-
-.column img {
-  width: 90%;
-  height: 90%;
-  object-fit: cover;
-  display: block;
-  margin: auto;
 }
 
 /***********************Offers**********************************/
@@ -2595,4 +2586,18 @@ footer {
 }
 .more_btn:active {
   background-color: #e8ff63;
+}
+
+.lazyloaded {
+  animation-name: newPageOn;
+  animation-duration: 1s;
+}
+
+@keyframes newPageOn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
