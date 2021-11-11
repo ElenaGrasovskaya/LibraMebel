@@ -1198,10 +1198,7 @@
     width: 70%;
     margin: 10px auto;
   }
-  .nav h3 {
-    margin: none;
-    font-size: 1.8em;
-  }
+
 
   .head-grid-item h3 {
     font-size: 2em;
@@ -1245,6 +1242,8 @@
     color: #666666;
     border-radius: 3px;
     border: 2px solid #666666;
+    font-size: 1.8em;
+    padding: 0.5em;
 
     margin: 5px;
   }
@@ -1441,7 +1440,7 @@
     background-position: center; /* Center the image */
   }
   #goBack {
-    height: 600px;
+    min-height: 10vh;
     width: 100%;
     background-color: black;
     opacity: 0;
@@ -1560,7 +1559,7 @@
   .next {
     cursor: pointer;
     position: absolute;
-    top: 10%;
+    top: 45vh;
     width: auto;
     padding: 10px;
 
@@ -1625,26 +1624,26 @@
 
   /* Modal Content */
   .modal-content {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     background-color: black;
-    margin: auto;
-    padding: 0;
-    width: 95%;
-    overflow: hidden;
+
   }
 
   /* Hide the slides by default */
   .mySlides {
-    display: none;
-    height: 90%;
+    
+    height: 50vh;
     overflow: hidden;
+    background-color: black;
   }
   .subimage {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    height: 20%;
-    width: 95%;
+    height: 20vh;
+    width: auto;
     margin: auto;
+    padding: 0 2.5% 0 2.5%;
     background-color: rgba(95, 95, 95, 0.1);
     overflow: hidden;
   }
@@ -2361,6 +2360,11 @@ img.hover-shadow {
 
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#modal-block-large {
+  display: block;
+  opacity: 0;
+  min-height: 50%;
 }
 
 .description {

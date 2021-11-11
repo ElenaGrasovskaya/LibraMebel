@@ -169,7 +169,7 @@ function currentSlide(currentSlideNumber, slide) {
   ); //Picture URL to be displayed
 
   let previousImage = document.getElementById("modal-block-large");
-  previousImage.style.display = "block"; //turning on image display
+  previousImage.style.opacity = 1; //turning on image display
 
   const regex = /\/kitchen\/page\d\/?.\d_\d.jpg/g; //regex for updating images url
 
