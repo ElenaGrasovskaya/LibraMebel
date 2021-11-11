@@ -144,8 +144,8 @@
                                
                                 <!-- Images used to open the lightbox -->
                                 <div class="row">
-                                        <div class="column">
-                                        <img data-src="thumbnails/kitchen/page1/1_1.jpg" onclick="openModal();currentSlide(1, this)" class="hover-shadow lazyload" alt="Кухня массив классика на заказ в Одессе"><!--<span class="description">Wonderfull kitchen description</span>-->
+                                        <div class="column" data="ЖК 35 Жемчужина, /n Фасады - МДФ, /n Столешница - акрил">
+                                        <img data-src="thumbnails/kitchen/page1/1_1.jpg"  onclick="openModal();currentSlide(1, this)" class="hover-shadow lazyload" alt="Кухня массив классика на заказ в Одессе"><!--<span class="description">Wonderfull kitchen description</span>-->
                                         </div>
                                         <div class="column">
                                         <img data-src="thumbnails/kitchen/page1/2_1.jpg" onclick="openModal();currentSlide(2, this)" class="hover-shadow lazyload" alt="Кухня ДСП модерн на заказ в Одессе ">
@@ -198,10 +198,10 @@
                                         <span class="close cursor" onclick="closeModal()">&times;</span>
                                         <div class="modal-content">
                                 
-                                        <div class="mySlides">
+                                        <div class="mySlides" id="modal-block-large">
                                         <div class="numbertext">1 / 12</div>
                                         <img class="viewport lazyload" data-src="gallery/kitchen/page1/1_1.jpg"  alt="Кухня">
-                                        </div>
+                                        </div> <!--
                                 
                                         <div class="mySlides">
                                         <div class="numbertext">2 / 12</div>
@@ -256,7 +256,7 @@
                                         <div class="mySlides">
                                         <div class="numbertext">12 / 12</div>
                                         <img class="viewport lazyload" data-src="gallery/kitchen/page1/12_1.jpg"  alt="Кухня">
-                                        </div>
+                                        </div> -->
                                 
                                         <!-- Next/previous controls -->
                                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -267,19 +267,19 @@
                                         <!-- Thumbnail image controls -->
                                 <div class ="subimage">
                                         <div class="thumbnail">
-                                        <img class="demo" src="thumbnails/kitchen/page1/3_1.jpg" onclick="showSubSlides(1)"  alt="Кухня">
+                                        <img class="demo" src="thumbnails/kitchen/page1/1_1.jpg" onclick="showSubSlides(this)"  alt="Кухня">
                                         </div>
                                 
                                         <div class="thumbnail">
-                                        <img class="demo" src="thumbnails/kitchen/page1/3_2.jpg" onclick="showSubSlides(2)" alt="Кухня">
+                                        <img class="demo" src="thumbnails/kitchen/page1/1_2.jpg" onclick="showSubSlides(this)" alt="Кухня">
                                         </div>
                                 
                                         <div class="thumbnail">
-                                        <img class="demo" src="thumbnails/kitchen/page1/3_3.jpg" onclick="showSubSlides(3)" alt="Кухня">
+                                        <img class="demo" src="thumbnails/kitchen/page1/1_3.jpg" onclick="showSubSlides(this)" alt="Кухня">
                                         </div>
                                 
                                         <div class="thumbnail">
-                                        <img class="demo"  src="thumbnails/kitchen/page1/3_4.jpg" onclick="showSubSlides(4)" alt="Кухня">
+                                        <img class="demo"  src="thumbnails/kitchen/page1/1_4.jpg" onclick="showSubSlides(this)" alt="Кухня">
                                         </div>
                                         
                                                                               
