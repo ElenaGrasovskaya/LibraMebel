@@ -132,12 +132,12 @@
         </section>
         <section class="gallery" id="gallery">
                 <h2>ПРОЕКТЫ</h2>
-                <!--<div class="gallery-nav">
+                <div class="gallery-nav">
                         <a id = "kitchen" class="tabs-active" onclick="turnTabs(0)"><h3>КУХНИ</h3></a>
                         <a id = "wardrobe" class="tabs" onclick="turnTabs(1)"><h3>ШКАФЫ</h3></a>
                         <a id = "bathroom" class="tabs" onclick="turnTabs(2)"><h3>ВАННЫЕ КОМНАТЫ</h3></a>
                         <a id = "other" class="tabs" onclick="turnTabs(3)"><h3>РАЗНОЕ</h3></a>
-                </div> -->
+                </div>
                
                 <div class="gallery-container" id = "gallery-container">
                         <div class="gallery-container-page" id="touchsurface">
@@ -199,7 +199,7 @@
                                         <div class="modal-content">
                                 
                                         <div class="mySlides" id="modal-block-large">
-                                        <img class="viewport lazyload" data-src="gallery/kitchen/page1/1_1.jpg"  alt="Кухня">
+                                        <img id="largeViewportImage" class="viewport lazyload" data-src="gallery/kitchen/page1/1_1.jpg" src="gallery/kitchen/page1/1_1.jpg"  alt="Кухня">
                                         </div> <!--
                                 
                                         <div class="mySlides">
@@ -265,13 +265,14 @@
                                        
                                         <!-- Thumbnail image controls -->
                                 <div class ="subimage">
-                                        <div class="thumbnail">
+                                        <div class="thumbnail" id="thumbnail">
                                         <img class="demo" src="thumbnails/kitchen/page1/1_1.jpg" onclick="showSubSlides(this)"  alt="Кухня">
                                         </div>
                                 
                                         <div class="thumbnail">
                                         <img class="demo" src="thumbnails/kitchen/page1/1_2.jpg" onclick="showSubSlides(this)" alt="Кухня">
                                         </div>
+                                                                             
                                 
                                         <div class="thumbnail">
                                         <img class="demo" src="thumbnails/kitchen/page1/1_3.jpg" onclick="showSubSlides(this)" alt="Кухня">
@@ -280,11 +281,34 @@
                                         <div class="thumbnail">
                                         <img class="demo"  src="thumbnails/kitchen/page1/1_4.jpg" onclick="showSubSlides(this)" alt="Кухня">
                                         </div>
+
+                                        <div class="thumbnail" id="thumbnail">
+                                        <img class="demo" src="thumbnails/kitchen/page1/1_5.jpg" onclick="showSubSlides(this)"  alt="Кухня">
+                                        </div>
+                                        
+                                        <div class="thumbnail">
+                                        <img class="demo" src="thumbnails/kitchen/page1/1_6.jpg" onclick="showSubSlides(this)" alt="Кухня">
+                                        </div>
+                                                                                     
+                                        
+                                        <div class="thumbnail">
+                                        <img class="demo" src="thumbnails/kitchen/page1/1_7.jpg" onclick="showSubSlides(this)" alt="Кухня">
+                                        </div>
+                                        
+                                        <div class="thumbnail">
+                                        <img class="demo"  src="thumbnails/kitchen/page1/1_8.jpg" onclick="showSubSlides(this)" alt="Кухня">
+                                        </div>
+
+                                        <div class="thumbnail" id="thumbnail">
+                                        <img class="demo" src="thumbnails/kitchen/page1/1_9.jpg" onclick="showSubSlides(this)"  alt="Кухня">
+                                        </div>
+                                                
+                                       
                                         
                                                                               
                                         
                                 </div>
-                                <div id="goBack" onclick="closeModal()"></div>
+                                <!--<div id="goBack" onclick="closeModal()"></div> -->
                         </div>
 
                         

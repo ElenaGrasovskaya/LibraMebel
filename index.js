@@ -122,10 +122,37 @@ document.addEventListener("swiped-right", function (e) {
 /* ***********************************  GLOBAL VARIABLES  **************************** */
 
 let currentTab = 0;
+const tabs = ["kitchen", "wardrobe", "bathroom", "other"];
 let pageNum = 1;
 let thePage = 1;
 
-const pageMax = [5, 1, 1, 2];
+const pageMax = [7, 2, 2, 2];
+const SubSlides = [
+  [
+    [4, 6, 5, 4, 7, 7, 7, 5, 7, 9, 5, 7],
+    [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+    [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+    [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+    [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+    [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  ],
+  [
+    [5, 6, 5, 4, 5, 6, 8, 4, 5, 4, 3, 7],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  ],
+
+  [
+    [3, 4, 4, 6, 6, 8, 7, 6, 5, 6, 5, 5],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  ],
+  [
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  ],
+];
 
 const maxSlides = 48;
 let slideIndex = 1;
@@ -152,46 +179,53 @@ function morePhotos(moreButton) {
 
   container.innerHTML += newGallery;
 
-  if (pageNum === pageMax[0]) {
+  if (pageNum === pageMax[currentTab]) {
     moreButton.style.display = "none";
   }
 }
 
 function currentSlide(currentSlideNumber, slide) {
   let previewImageURL = slide.src;
-  let position_previewImageURL =
-    slide.src.indexOf("thumbnails") + "thumbnails".length;
-  let currentPageN = slide.src[Number(slide.src.indexOf("page")) + 4]; //Getting page number from slide data
+  console.log("slide", slide);
+  let newURL = slide.src.split("thumbnails");
+  let newImageURL = newURL[1];
+  const currentImageURL = document
+    .getElementById("largeViewportImage")
+    .src.split("gallery")[1];
+  console.log("currentImageURL", currentImageURL);
+
+  let newPictureDisplay = document.getElementById("modal-block-large");
+
+  newPictureDisplay.innerHTML = newPictureDisplay.innerHTML.replaceAll(
+    currentImageURL,
+    newImageURL
+  );
+  newPictureDisplay.style.opacity = 1;
+
+  const currentPageN = slide.src[Number(slide.src.indexOf("page")) + 4]; //Getting page number from slide data
   pageNum = currentPageN;
-  let newPictureURL = previewImageURL.substring(
-    position_previewImageURL,
-    previewImageURL.length
-  ); //Picture URL to be displayed
-
-  let previousImage = document.getElementById("modal-block-large");
-  previousImage.style.opacity = 1; //turning on image display
-
-  const regex = /\/kitchen\/page\d\/?.\d_\d.jpg/g; //regex for updating images url
-
-  let newImage = previousImage.innerHTML.replaceAll(regex, newPictureURL);
-  previousImage.innerHTML = newImage; //replaced image scr according to the thumbnail clicked
 
   let dots_element = document.getElementsByClassName("demo");
-  console.log("dots_element", dots_element);
 
+  const regex = /\/page\d\/?.\d_\d.jpg/g; //regex for updating images url
   for (let i = 0; i < dots_element.length; i++) {
     if (i == 0) dots_element[i].id = "active_dot";
     else dots_element[i].id = "";
     dots_element[i].src = dots_element[i].src.replaceAll(
       regex,
-      `/kitchen/page${currentPageN}/${currentSlideNumber}_${i + 1}.jpg`
+      `/page${currentPageN}/${currentSlideNumber}_${i + 1}.jpg`
     );
+    if (i + 1 > SubSlides[currentTab][pageNum - 1][currentSlideNumber - 1]) {
+      dots_element[i].style.display = "none";
+    }
+
     console.log("dots_element", dots_element[i]);
   }
 }
 
 function showSubSlides(currentSubSlide) {
   let activeDot = document.getElementById("active_dot");
+  console.log("activeDot", activeDot);
   activeDot.id = "";
   console.log("activeDot", activeDot.src);
   currentSubSlide.id = "active_dot";
@@ -302,9 +336,48 @@ function plusSlides(n) {
       /page\d.?.._\d.jpg/g,
       `page${pageNum}/${slideIndex}_${i + 1}.jpg`
     );
+
+    if (i + 1 > SubSlides[currentTab][pageNum - 1][slideIndex - 1]) {
+      console.log("maxSubSlides", SubSlides[currentTab][pageNum - 1][slideIndex - 1]);
+      allDots[i].style.display = "none";
+    } else allDots[i].style.display = "block";
   }
 }
+
+function turnTabs(tab) {
+  let gallery = document.getElementsByClassName("hover-shadow");
+  let lightbox = document.getElementsByClassName("viewport");
+  let subimage = document.getElementsByClassName("demo");
+  let pageText = document.getElementById("pageText");
+
+  for (let i = 0; i < tabs.length; i++) {
+    if (i == tab) document.getElementById(tabs[i]).className = "tabs-active";
+    else document.getElementById(tabs[i]).className = "tabs";
+  }
+
+  for (let i = 0; i < gallery.length; i++) {
+    gallery[i].src = gallery[i].src.replaceAll(/page\d/gi, "page1"); //Reverting to the first page
+    gallery[i].src = gallery[i].src.replaceAll(tabs[currentTab], tabs[tab]);
+  }
+
+  for (let i = 0; i < lightbox.length; i++) {
+    lightbox[i].src = lightbox[i].src.replaceAll(/page\d/gi, "page1"); //Reverting to the first page
+    lightbox[i].src = lightbox[i].src.replaceAll(tabs[currentTab], tabs[tab]);
+  }
+
+  for (let i = 0; i < subimage.length; i++) {
+    subimage[i].src = subimage[i].src.replaceAll(/page\d/gi, "page1"); //Reverting to the first page
+    subimage[i].src = subimage[i].src.replaceAll(tabs[currentTab], tabs[tab]);
+  }
+
+  currentTab = tab;
+  pageNum = 1;
+}
 /*
+
+
+
+
 function hoverDescription() {
   let gallerySlides = document.getElementsByClassName("column");
   console.log(gallerySlides);
