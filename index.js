@@ -154,6 +154,8 @@ const SubSlides = [
   ],
 ];
 
+const galleryInitialState =  document.getElementById("touchsurface").innerHTML;
+
 const maxSlides = 48;
 let slideIndex = 1;
 
@@ -167,17 +169,28 @@ function closeModal() {
   document.getElementById("myModal").style.display = "none";
 }
 
-function morePhotos(moreButton) {
-  let moreGallery = document.getElementById("touchsurface");
-  let container = document.getElementById("gallery-container");
+function morePhotos(clear = false) {
+  const moreGallery = document.getElementById("touchsurface");
+  const container = document.getElementById("gallery-container");
+  const moreButton = document.getElementById("moreButton");
 
   let thisPage = "page1";
-  pageNum++;
+  if (!clear) {
+    pageNum++;
+  }
+
   let newPage = "page" + pageNum;
   let moreGalleryHTML = moreGallery.innerHTML;
   let newGallery = moreGalleryHTML.replaceAll(thisPage, newPage);
+  if (!clear) {
+    moreGallery.innerHTML += newGallery;
+  }
+  else
+  { 
+   const returnToInitialStateGallery = galleryInitialState.replaceAll("kitchen", tabs[currentTab])
 
-  container.innerHTML += newGallery;
+    moreGallery.innerHTML = returnToInitialStateGallery;
+  }
 
   if (pageNum === pageMax[currentTab]) {
     moreButton.style.display = "none";
@@ -338,7 +351,10 @@ function plusSlides(n) {
     );
 
     if (i + 1 > SubSlides[currentTab][pageNum - 1][slideIndex - 1]) {
-      console.log("maxSubSlides", SubSlides[currentTab][pageNum - 1][slideIndex - 1]);
+      console.log(
+        "maxSubSlides",
+        SubSlides[currentTab][pageNum - 1][slideIndex - 1]
+      );
       allDots[i].style.display = "none";
     } else allDots[i].style.display = "block";
   }
@@ -372,6 +388,7 @@ function turnTabs(tab) {
 
   currentTab = tab;
   pageNum = 1;
+  morePhotos(true);
 }
 /*
 
