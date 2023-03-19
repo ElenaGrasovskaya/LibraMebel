@@ -282,6 +282,9 @@
   .hero-grid-item-form button:active {
     background-color: #e8ff63;
   }
+  .nav {
+    margin-top: 25px;
+  }
 
   /*****************************Gallery Big***********************************/
   .modal {
@@ -430,40 +433,7 @@
   .column {
     position: relative;
   }
-  /* .column::before {
-    display: block;
-    position: absolute;
-    top: 0%;
-    left: 5%;
-    padding: 5%;
-    content: attr(data) " ";
-    white-space: pre;
-    line-height: 2rem;
-    font-size: 20px;
-    
-    width: 80%;
-    height: 10%;
-    background-color: rgba(171, 192, 56, 0.5);
-    z-index: 5;
-    overflow-y: hidden;
-    color: #333;
-    font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
 
-    opacity: 0;
-
-    transform-origin: bottom;
-    transition: all 1s;
-    animation-name: reveal;
-    animation-duration: 1s;
-  }
-
-
-  .column:hover::before {
-    height: 50%;
-
-    opacity: 0.8;
-  }
-  */
 
   .pageturn {
     display: block;
@@ -1461,12 +1431,12 @@
   }
 
   .gallery h3 {
-    text-align: center;
     font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
     color: #666666;
     line-height: 1.3;
     font-size: 2em;
-    display: inline;
+    display: block;
+    margin: auto;
     cursor: pointer;
   }
 
@@ -2291,6 +2261,7 @@
 }
 
 /*HEADER*/
+
 
 .nav a:hover {
   text-decoration: underline;

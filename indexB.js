@@ -154,7 +154,7 @@ const SubSlides = [
   ],
 ];
 
-const galleryInitialState =  document.getElementById("touchsurface").innerHTML;
+const galleryInitialState = document.getElementById("touchsurface").innerHTML;
 
 const maxSlides = 48;
 let slideIndex = 1;
@@ -184,10 +184,11 @@ function morePhotos(clear = false) {
   let newGallery = moreGalleryHTML.replaceAll(thisPage, newPage);
   if (!clear) {
     moreGallery.innerHTML += newGallery;
-  }
-  else
-  { 
-   const returnToInitialStateGallery = galleryInitialState.replaceAll("kitchen", tabs[currentTab])
+  } else {
+    const returnToInitialStateGallery = galleryInitialState.replaceAll(
+      "kitchen",
+      tabs[currentTab]
+    );
 
     moreGallery.innerHTML = returnToInitialStateGallery;
   }
@@ -202,6 +203,7 @@ function currentSlide(currentSlideNumber, slide) {
   console.log("slide", slide);
   let newURL = slide.src.split("thumbnails");
   let newImageURL = newURL[1];
+
   const currentImageURL = document
     .getElementById("largeViewportImage")
     .src.split("gallery")[1];
@@ -365,6 +367,8 @@ function turnTabs(tab) {
   let lightbox = document.getElementsByClassName("viewport");
   let subimage = document.getElementsByClassName("demo");
   let pageText = document.getElementById("pageText");
+  const moreButton = document.getElementById("moreButton");
+  moreButton.style.display = "block";
 
   for (let i = 0; i < tabs.length; i++) {
     if (i == tab) document.getElementById(tabs[i]).className = "tabs-active";
