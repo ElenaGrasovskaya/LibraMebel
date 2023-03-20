@@ -181,7 +181,8 @@ function morePhotos(clear = false) {
 
   let newPage = "page" + pageNum;
   let moreGalleryHTML = moreGallery.innerHTML;
-  let newGallery = moreGalleryHTML.replaceAll(thisPage, newPage);
+  let newGallery = galleryInitialState.replaceAll(thisPage, newPage);
+  console.log(galleryInitialState);
   if (!clear) {
     moreGallery.innerHTML += newGallery;
   }
@@ -370,16 +371,17 @@ function turnTabs(tab) {
     if (i == tab) document.getElementById(tabs[i]).className = "tabs-active";
     else document.getElementById(tabs[i]).className = "tabs";
   }
+  for (let i = 0; i < lightbox.length; i++) {
+    lightbox[i].src = lightbox[i].src.replaceAll(/page\d/gi, "page1"); //Reverting to the first page
+    lightbox[i].src = lightbox[i].src.replaceAll(tabs[currentTab], tabs[tab]);
+  }
 
   for (let i = 0; i < gallery.length; i++) {
     gallery[i].src = gallery[i].src.replaceAll(/page\d/gi, "page1"); //Reverting to the first page
     gallery[i].src = gallery[i].src.replaceAll(tabs[currentTab], tabs[tab]);
   }
 
-  for (let i = 0; i < lightbox.length; i++) {
-    lightbox[i].src = lightbox[i].src.replaceAll(/page\d/gi, "page1"); //Reverting to the first page
-    lightbox[i].src = lightbox[i].src.replaceAll(tabs[currentTab], tabs[tab]);
-  }
+
 
   for (let i = 0; i < subimage.length; i++) {
     subimage[i].src = subimage[i].src.replaceAll(/page\d/gi, "page1"); //Reverting to the first page
